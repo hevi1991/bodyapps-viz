@@ -10,9 +10,9 @@
 
 	<body>
 		
-		<div id="info">BodyVisualiser for Valentina Project</div>
-		<div id="info"><a href="index.html">Switch to male body.</a></div>
-        <div id="info"><a href="female.html">Switch to female body.</a></div>
+		<div class="info">BodyVisualiser for Valentina Project</div>
+		<div class="info"><a href="index.html">Switch to male body.</a></div>
+        <div class="info"><a href="female.html">Switch to female body.</a></div>
 		<div id="container"></div>
 		
 		<script src="js/three.js"></script>
@@ -64,6 +64,8 @@
 
 				// LIGHTS
 
+				const amlight = new THREE.AmbientLight(0x404040); // soft white light
+                scene.add(amlight);
 
 				var light = new THREE.DirectionalLight( 0xffffff, 1 );
 				light.position.set( 0, -1, 0 );
@@ -74,7 +76,7 @@
 
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
-				renderer.setClearColor( 0xffffff );
+				renderer.setClearColor( 0x222222 );
 				container.appendChild( renderer.domElement );
 
 				// CHARACTER
